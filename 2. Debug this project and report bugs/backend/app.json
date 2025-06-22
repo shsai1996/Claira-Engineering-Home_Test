@@ -1,0 +1,41 @@
+{
+  "name": "personal-finance-copilot-backend",
+  "description": "FastAPI backend for Personal Finance Copilot application",
+  "repository": "https://github.com/yourusername/personal-finance-copilot",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["python", "fastapi", "finance", "ai"],
+  "env": {
+    "SECRET_KEY": {
+      "description": "A secret key for the application",
+      "generator": "secret"
+    },
+    "DATABASE_URL": {
+      "description": "Database URL (will be set automatically by Heroku Postgres)",
+      "required": false
+    },
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API key for AI features",
+      "required": false
+    },
+    "DEBUG": {
+      "description": "Debug mode",
+      "value": "False"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:mini"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+} 

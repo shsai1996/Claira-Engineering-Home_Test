@@ -1,0 +1,39 @@
+Backend 
+
+
+Product design issues 
+  what should be done if same file repeated for upload 
+  what should be done if empty data is uploaded 
+
+1) When new csv file uploaded data is getting appended instead of overwriting , option should be given to user to override or append
+2) If same file is uploaded, instead of checking exisiting entries (or equivalent) data getting appended to previous data 
+3) When empty file uploaded show an error with empty data has been recived instead showing details with all 0s
+4) Positive amount like salary also being calculated as expense and added to total_expense (abs is used, need to remove postive values from transactions)
+5) No category defined for Salary or other incomes
+6) In Copilot generaly query giving wrong total where summing of all happening without abs, so total expense is not correct here. 
+7) Monthly expense query has to be adjusted as per transaction data , not per current date for better visbility
+8) Other category not summrised as it does not have id, add others id if no category found 
+9) What was my biggest purchase in December? returns empty, ideally time filter should check month and year wise not latest one only
+10) What is my biggest expense gives salary credit (+ve value) instead of expense
+11) what is my lowest expense returns totla number of transactions
+12) prompt improvement can be done 
+
+versioning of APIs is good idea if features have to be isolated like api/v1 , api/v2 like this.
+Adding swagger documentation is good idea if FE team has to check the APIs before integrating
+Better to show list of csv files also uploaded in the past to avoid repetetion 
+
+
+Frontend 
+1) Enable Dashboard/Transactions/Copilot only when data is availble, atleast one transaction (use an API if data exists with valid transactions)
+2) If empty file uploaded show an error in FE only and ask user if still wanted to upload. 
+3) You spent $-136.47 on Entertainment coming in copilot, - symbol should not show as it is already spent 
+4) Disable total expense if no transactions are available in backend (grayed out the total)
+5) Sorting by date, category, amount is good idea 
+6) Overall average transaction amount good to show
+7) Other category not shown as backend not sending them in summarised data
+
+
+Better to show list of csv files uploaded history in the past to avoid duplicates
+
+
+
